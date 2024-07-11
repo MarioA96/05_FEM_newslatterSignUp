@@ -1,0 +1,21 @@
+{
+  "name": "05-fem-newslattersignup",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "astro": "^4.11.5",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.41.0"
+  }
+}

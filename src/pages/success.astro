@@ -1,0 +1,111 @@
+---
+
+import '../index.css';
+import Layout from "../layouts/indexLayout.astro";
+
+import { cva, css } from '../../styled-system/css/';
+
+
+const card = cva({
+    base: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '20px',
+        borderRadius: '10px',
+        backgroundColor: 'white',
+        height: { lg: '400px', sm: '460px', xsm: '100%' },
+        width: { lg: '400px', sm: '480px', xsm: '100%' },
+        '& #card-content': {
+            display: { lg: 'flex', xsm: 'block' },
+            flexDirection: { lg: 'column', xsm: 'column' },
+            flex: { lg: '1', xsm: '1' },
+            height: { lg: '400px', xsm: 'fit-content'}, 
+            width: { lg: '100%', xsm: '100%' },
+            paddingTop: { lg: '0px', xsm: '100px' }, 
+            paddingBottom: { lg: '0px', xsm: '200px' },
+            '& img': {
+                display: 'flex',
+                width: '55px',
+                height: '55px',
+                marginBottom: '25px',
+            },
+            '& h1': {
+                display: 'flex',
+                fontFamily: "'roboto', sans-serif",
+                fontWeight: '800',
+                fontSize: { lg: '38px', xsm: '38px' },
+                color: 'hsl(234, 29%, 20%)',
+                marginBottom: { lg: '10px', xsm: '20px'},
+            },
+            '& p': {
+                display: 'flex',
+                fontFamily: "'roboto', sans-serif",
+                fontWeight: '400',
+                fontSize: '14px',
+                color: 'hsl(234, 29%, 20%)',
+            }
+        }
+    }
+});
+
+const button = cva({
+    base: {
+        display: 'flex',
+        width: { lg: '100%', sm: '90%', xsm: '90%' },
+        height: { lg: '50px', sm: '150px', xsm: '50px' },
+        fontWeight: '400',
+        fontFamily: "'roboto', sans-serif",
+        fontSize: '16px',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '10px',
+        '&:hover': {
+            backgroundColor: '#5d5f73',
+            cursor: 'pointer',
+        }
+    },
+    variants: {
+        primary: {
+            'solid': {
+                backgroundColor: '#232742',
+                color: 'white',
+            }
+        },
+        secondary: {
+            'solid': {
+                backgroundColor: 'orange',
+                color: 'black',
+            }
+        }
+    },
+    defaultVariants: {
+        primary: 'solid'
+    }
+});
+
+
+---
+
+<Layout title="Success">
+    <main class={ card({}) }>
+        <div id="card-content">
+            <img src="./../../resources/assets/images/icon-success.svg" alt="confirmation-icon">
+            <h1>Thanks for subscribing!</h1>
+            <p>
+                A confirmation email has been sent to <b id="emailReceipt" class={ css({ display: 'contents', width: 'fit-content', height: 'fit-content' }) }></b>.
+                Please open it and click the button inside to confirm your subscription.
+            </p>
+        </div>
+        <button class={ button({ primary: 'solid' }) }>Dismiss message</button>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id') || ''; // 'tuParametro'
+
+        const emailReceiptElement = document.getElementById('emailReceipt');
+        emailReceiptElement!.innerText = id;
+    </script>
+</Layout>

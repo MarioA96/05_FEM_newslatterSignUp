@@ -1,0 +1,52 @@
+---
+
+import { 
+    mainBox, 
+    leftFormularyBox, leftFormularyContent, 
+    rightImageBox, rightImageContent  
+} from './styles'
+
+---
+
+
+<main id="mainbox" class={ mainBox({}) }>
+    <div id="left-formularybox" class={ leftFormularyBox({}) }>
+        <div id="left-formularybox_content" class={ leftFormularyContent({  })}>
+            <h2 id="formulary-title">
+                Stay updated!
+            </h2>
+            <p id="formulary-subtitle">
+                Join 60,000+ product managers receving monthly updates on:
+            </p>
+            <ul id="formulary-list">
+                <li>
+                    <img src="./../../../resources/assets/images/icon-success.svg" alt="icon-list">
+                    Product discovery and building what matters
+                </li>
+                <li>
+                    <img src="./../../../resources/assets/images/icon-success.svg" alt="icon-list">
+                    Measuring to ensure updates are a success
+                </li>
+                <li>
+                    <img src="./../../../resources/assets/images/icon-success.svg" alt="icon-list">
+                    And much more!
+                </li>
+            </ul>
+            <form id="formulary-inputbox">
+                <div style="display: flex;">
+                    <label for="email" id="email-label">Email address</label>
+                    <label for="errorEmail" id="error-email-label">Valid email required</label>
+                </div>
+                <input type="email" id="email" name="email" placeholder="emil@company.com">
+                <button id="btnSubmit">Subscribe to monthly newsletter</button>
+            </form>
+        </div>
+    </div>
+    <div id="right-imagebox" class={ rightImageBox({}) }>
+        <div id="right-imagebox_content" class={ rightImageContent({}) }>
+            <img id="desktop-sign_up-image" src="../../../resources/assets/images/illustration-sign-up-desktop.svg" alt="content-image">
+            <img id="mobile-sign_up-image" src="../../../resources/assets/images/illustration-sign-up-mobile.svg" alt="content-image">
+        </div>
+    </div>
+</main>
+<script src="../scripts/formularyValidation"></script>
