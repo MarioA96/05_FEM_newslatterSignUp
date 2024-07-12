@@ -20,7 +20,7 @@
             errorEmailLabel.style.display = 'none';
 
             //redireccion con parametros en la url destino
-            window.location.href = `/05_FEM_newslatterSignUp/success?id=${emailValue}`;
+            window.location.href = `/05_FEM_newslatterSignUp/success?id=${emailValue}`; // redireccion a la pagina de exito
 
         }else{
             emailInput.style.border = '2px solid #ff614f';
