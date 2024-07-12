@@ -2,13 +2,13 @@
 
 ## State of project: DONE! 🎉
 
-Live Demo: 
+[Live Demo](https://marioa96.github.io/05_FEM_newslatterSignUp/)
 
 ---
 
 The required design: 
 
-![Design preview for the Newsletter sign-up form with success message coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Newsletter sign-up form with success message coding challenge](/public/design/desktop-preview.jpg)
 
 ## The challenge
 
